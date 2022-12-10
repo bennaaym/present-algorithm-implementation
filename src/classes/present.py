@@ -9,10 +9,10 @@ import codecs
 class PRESENT:
   rounds = 32
   def __init__(self, key: str) -> None:
-    self.__key_schedular = KeySchedular(key)
+    self.__key_schedular = KeySchedular(codecs.decode(key, "hex"))
   
   def encrypt(self, plain_text: str) -> str:
-    state: int = Util.string_to_number(plain_text)
+    state: int = Util.string_to_number(codecs.decode(plain_text, "hex"))
     for i in range(self.rounds - 1):
       state = AddRoundKeyLayer.add_round_key(state, self.__key_schedular.round_keys[i])
       state = SBoxLayer.substitute(state)
@@ -25,7 +25,7 @@ class PRESENT:
 
   
   def decrypt(self, cipher_text: str) -> str:
-    state: int = Util.string_to_number(cipher_text)
+    state: int = Util.string_to_number(codecs.decode(cipher_text, "hex"))
     for i in range(self.rounds - 1):
       state = AddRoundKeyLayer.add_round_key(state, self.__key_schedular.round_keys[-i - 1])
       state = PLayer.inverse_permute(state)
@@ -34,4 +34,4 @@ class PRESENT:
     plain_text = AddRoundKeyLayer.add_round_key(state, self.__key_schedular.round_keys[0])
     plain_text = Util().number_to_string(plain_text, 8)
     plain_text = codecs.encode(plain_text, "hex")
-    return plain_text
+    return str(str(plain_text)[2:-1])
