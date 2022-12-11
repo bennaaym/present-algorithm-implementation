@@ -1,4 +1,4 @@
-from classes.ui import UI
+from src.classes.ui import UI
 
 if __name__ == "__main__":  
   while True:

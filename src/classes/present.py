@@ -1,8 +1,8 @@
-from classes.key_scheduler import KeySchedular
-from classes.add_round_key import AddRoundKeyLayer
-from classes.s_box_layer import SBoxLayer
-from classes.p_layer import PLayer
-from classes.util import Util
+from src.classes.key_scheduler import KeySchedular
+from src.classes.add_round_key import AddRoundKeyLayer
+from src.classes.s_box_layer import SBoxLayer
+from src.classes.p_layer import PLayer
+from src.classes.util import Util
 import codecs
 
 

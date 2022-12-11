@@ -22,8 +22,14 @@ https://github.com/bennaaym/present-algorithm-implementation.git
 
 2. cd to the cloned repo (present-algorithm-implementation)
 
+3. Run tests
+
+```
+python -m src.test.test_present
+```
+
 3. Run the following line:
 
 ```
-python src/main.py
+python -m src.main
 ```
