@@ -1,7 +1,8 @@
-from src.classes.present import PRESENT
-import codecs
+from src.classes.ui import UI
+
 
 if __name__ == "__main__":
-  pass
+  ui = UI()
+  ui.menu()
 
 
