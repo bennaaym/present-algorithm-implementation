@@ -1,6 +1,6 @@
 from typing import List
-from src.classes.util import Util
-from src.classes.s_box_layer import SBoxLayer
+from classes.util import Util
+from classes.s_box_layer import SBoxLayer
 
 class KeySchedular:
   def __init__(self, key: str) -> None:

@@ -1,6 +1,7 @@
 from typing import List
-from src.classes.util import Util
-from src.classes.present import PRESENT 
+from classes.util import Util
+from classes.present import PRESENT 
+import os
 
 
 class UI:
@@ -15,6 +16,10 @@ class UI:
     option = int(input("Choose and option: "))
 
     options[option]()
+
+  
+  def clear_screen(self):
+    os.system("cls")
 
   def __encrypt_ui(self):
     key = input("Key (20-digit or 32-digit hex): ")

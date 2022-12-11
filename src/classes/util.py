@@ -19,7 +19,7 @@ class Util:
 
   @staticmethod
   def hex_string_to_string(hex_string: str) -> str:
-    return "".join([chr(int(hex_string[i] + hex_string[i + 1], 16)) for i in range(0, len(hex_string), 2)])
+    return ("".join([chr(int(hex_string[i] + hex_string[i + 1], 16)) for i in range(0, len(hex_string), 2)])).lstrip("\x00")
 
   @staticmethod
   def split_to_64_blocks(string: str) -> List[str]:
