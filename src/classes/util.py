@@ -25,5 +25,5 @@ class Util:
   def split_to_64_blocks(string: str) -> List[str]:
     blocks: List[str] = []
     for i in range(0, len(string), 16):
-      blocks.append(string[i:i+16])
+      blocks.append((string[i:i+16]).rjust(16, "0"))
     return blocks
